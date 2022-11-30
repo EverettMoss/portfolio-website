@@ -6,19 +6,19 @@ function Projects() {
             <div className="w-screen h-screen bg-sky-100">
                 <div className="grid grid-cols-3 gap-4 p-5">
                     <div className="bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
-                        <p className="text-center font-light text-lg">soundcloud</p>
+                        <p className="text-center font-light text-lg text-slate-600">soundcloud</p>
                     </div>
                     <div className="bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
-                        <h1 className="text-center font-light text-lg">music</h1>
+                        <h1 className="text-center font-light text-lg text-slate-600">music</h1>
                     </div>
                     <div className="bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
-                        <p className="text-center font-light text-lg">credits</p>
+                        <p className="text-center font-light text-lg text-slate-600">credits</p>
                     </div>
                     <div className="bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
-                        <p className="text-center font-light text-lg">dice</p>
+                        <p className="text-center font-light text-lg text-slate-600">dice</p>
                     </div>
                     <div className="bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
-                        <p className="text-center font-light text-lg">name</p>
+                        <p className="text-center font-light text-lg text-slate-600">name</p>
                     </div>
 
                 </div>
