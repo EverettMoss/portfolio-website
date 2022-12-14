@@ -3,7 +3,7 @@ import React from "react";
 function Projects() {
     return (
         <>
-            <div className="w-screen h-screen bg-sky-100">
+            <div className="w-screen h-screen bg-zinc-100">
                 <div className="grid grid-cols-3 gap-4 p-5">
                     <div className="bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
                         <a href="/soundcloud">

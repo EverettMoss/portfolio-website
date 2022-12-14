@@ -3,36 +3,42 @@ import React from "react";
 function Navbar() {
     return (
         <>
-            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-cyan-700">
-                <div class="container flex flex-wrap items-center justify-between mx-auto">
-                    <a href="/" class="flex items-center">
-                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQF0V7zw3iLitQ/profile-displayphoto-shrink_400_400/0/1663130816427?e=1675296000&v=beta&t=I2FM0tzFNYblvXyVtV5OzBVzLeW2nTWqzHxsVaY0Fws" class="h-6 mr-3 sm:h-9 rounded-full" alt="Profile" />
-                    </a>
-                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            <nav class="flex items-center justify-between flex-wrap bg-cyan-700 p-6">
+                <div class="flex items-center flex-shrink-0 text-amber-400 mr-6">
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQF0V7zw3iLitQ/profile-displayphoto-shrink_400_400/0/1663130816427?e=1675296000&v=beta&t=I2FM0tzFNYblvXyVtV5OzBVzLeW2nTWqzHxsVaY0Fws" className="h-6 mr-3 sm:h-9 rounded-full" alt="Profile" />
+                </div>
+
+                <div class="block md:hidden">
+                    <button class="flex items-center px-3 py-2 border rounded text-slate-50 border-slate-50 hover:text-amber-400 hover:border-white">
+                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
                     </button>
-                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                        <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-cyan-800 md:dark:bg-cyan-700 dark:border-cyan-700">
-                            <li>
-                                <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-slate-50 md:p-0 dark:text-white md:dark:hover:text-yellow-400" aria-current="page">Home</a>
-                            </li>
-                            <li>
-                                <a href="/projects" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-slate-50 md:dark:hover:text-yellow-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projects</a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/EverettMoss" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-slate-50 md:dark:hover:text-amber-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">GitHub</a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/everettmoss/" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-slate-50 md:dark:hover:text-amber-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">LinkedIn</a>
-                            </li>
-                            <li>
-                                <a href="/about" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-slate-50 md:dark:hover:text-yellow-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-                            </li>
-                        </ul>
+                </div>
+
+                <div class="w-full block flex-grow md:flex md:items-center md:w-auto">
+                    <div class="text-sm md:flex-grow">
+                        
+                    </div>
+
+                    <div>
+                        <a href="/" class="block mt-4 md:inline-block md:mt-0 text-slate-50 hover:text-amber-400 mx-3 font-medium">
+                            Home
+                        </a>
+                        <a href="/projects" class="block mt-4 md:inline-block md:mt-0 text-slate-50 hover:text-amber-400 mx-3 font-medium">
+                            Projects
+                        </a>
+                        <a href="https://github.com/EverettMoss" target='_blank' rel="noreferrer" class="block mt-4 md:inline-block md:mt-0 text-slate-50 hover:text-amber-400 mx-3 font-medium">
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/everettmoss/" target='_blank' rel="noreferrer" class="block mt-4 md:inline-block md:mt-0 text-slate-50 hover:text-amber-400 mx-3 font-medium">
+                            LinkedIn
+                        </a>
+                        <a href="/about" class="block mt-4 md:inline-block md:mt-0 text-slate-50 hover:text-amber-400 mx-3 font-medium">
+                            About
+                        </a>
                     </div>
                 </div>
             </nav>
+
         </>
     )
 }
