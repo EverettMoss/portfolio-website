@@ -5,7 +5,10 @@ function Navbar() {
         <>
             <nav class="flex items-center justify-between flex-wrap bg-cyan-700 p-6">
                 <div class="flex items-center flex-shrink-0 text-amber-400 mr-6">
-                <img src="https://media-exp1.licdn.com/dms/image/C5603AQF0V7zw3iLitQ/profile-displayphoto-shrink_400_400/0/1663130816427?e=1675296000&v=beta&t=I2FM0tzFNYblvXyVtV5OzBVzLeW2nTWqzHxsVaY0Fws" className="h-6 mr-3 sm:h-9 rounded-full" alt="Profile" />
+                    <a href="/">
+                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQF0V7zw3iLitQ/profile-displayphoto-shrink_400_400/0/1663130816427?e=1675296000&v=beta&t=I2FM0tzFNYblvXyVtV5OzBVzLeW2nTWqzHxsVaY0Fws" className="h-6 mr-3 sm:h-9 rounded-full" alt="Profile" />
+                    </a>
+
                 </div>
 
                 <div class="block md:hidden">
@@ -16,7 +19,7 @@ function Navbar() {
 
                 <div class="w-full block flex-grow md:flex md:items-center md:w-auto">
                     <div class="text-sm md:flex-grow">
-                        
+
                     </div>
 
                     <div>

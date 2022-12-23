@@ -3,6 +3,7 @@ import Navbar from './components/navbar'
 import Projects from './components/projects'
 import About from './components/about'
 import Soundcloud from './components/soundcloud-stats'
+import RewindInfo from './components/RewindInfo'
 import MusicRewind from './components/music'
 import AlbumCredits from './components/album-credits'
 import Dice from './components/dice'
@@ -19,9 +20,10 @@ function App() {
         <Route path='/projects' element={<Projects />} />
         <Route path='/about' element={<About />} />
         <Route path='/soundcloud' element={<Soundcloud />} />
+        <Route path='/rewind-info' element={<RewindInfo />} />
         <Route path='/music-rewind' element={<MusicRewind />} />
         <Route path='/album-cedits' element={<AlbumCredits />} />
-        <Route path='/dice' element={<Dice />} />
+        <Route path='/dice-info' element={<Dice />} />
         <Route path='/names' element={<Names />} />
         <Route path='/twitch-widget' element={<TwitchWidget />} />
       </Routes>

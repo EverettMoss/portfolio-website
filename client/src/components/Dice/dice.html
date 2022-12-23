@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll The Dice</title>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="js/stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <p id="title">Micro Dice!</p>
+
+    <div class="container">
+        <div class="dice-wrapper">
+            <img id="die-1">
+            <img id="die-2">
+        </div>
+        <p id="total"></p>
+        <p id="result"></p>
+        <button id="rollStart" onclick="game()">ROLL THE DICE</button>
+
+        <button id="reroll" onclick="reroll()">RE ROLL</button>
+        <button id="reset" onclick="reset()">RESET</button>
+
+
+
+    </div>
+    <div class="instructions" id="instr">
+        <p>Fun dice game I created that I translated to js. <br>
+            Rules: The way you win the game is by rolling <br>
+            the same value on each dice simultaneously <br>
+            if you don't roll the same value on the first roll, <br>
+            then you have the amount of tries equal to <br>
+            the smaller value to get the larger value.
+        </p>
+    </div>
+
+    <!--Script-->
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>

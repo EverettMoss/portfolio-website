@@ -23,7 +23,6 @@ function Stats() {
                     <a href='https://github.com/EverettMoss/soundcloud-profiler' target='_blank' rel="noreferrer" className="hover:text-amber-400 font-semibold"><p>Source Code</p></a>
                 </div>
             </div>
-            <p></p>
         </>
     )
 }
