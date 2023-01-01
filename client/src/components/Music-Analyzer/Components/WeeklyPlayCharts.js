@@ -102,9 +102,7 @@ function WeeklyPlayCharts(props) {
 
     return (
         <>
-            <div className='p-5 w-1/2'>
-                <Bar options={options} data={data} />
-            </div>
+            <Bar options={options} data={data} />
         </>
 
     );

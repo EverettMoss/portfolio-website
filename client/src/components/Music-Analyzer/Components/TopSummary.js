@@ -65,9 +65,9 @@ function TopSummary(props) {
     return (
         <>
             <div>
-                <p className="font-light pl-5">You spent { Math.round((countPlays(props.data) / MINUTES_TO_DAYS) * 100) / 100 } days listening to music ({ Math.round(countPlays(props.data) * 100) / 100 } minutes). </p>
-                <p className="font-light pl-5">You listened to {countArtists(props.data)} artists.</p>
-                <p className="font-light pl-5">You listened to {uniqueSongs(props.data)} songs.</p>
+                <p className="font-light pl-5">You spent <span className="font-bold text-lg">{ Math.round((countPlays(props.data) / MINUTES_TO_DAYS) * 100) / 100 }</span> days listening to music (<span className="font-bold text-lg">{ Math.round(countPlays(props.data) * 100) / 100 }</span> minutes). </p>
+                <p className="font-light pl-5">You listened to <span className="font-bold text-lg">{countArtists(props.data)}</span> artists.</p>
+                <p className="font-light pl-5">You listened to <span className="font-bold text-lg">{uniqueSongs(props.data)}</span> songs.</p>
             </div>
         </>
     );

@@ -4,7 +4,7 @@ function Rewind() {
     return (
         <>
             <div className='w-full p-5'>
-                <h1 className='text-center font-semibold'>SoundCloud Stats</h1>
+                <h1 className='text-center font-semibold'>Apple Music Rewind</h1>
             </div>
 
             <div className='grid grid-cols-2 gap-5 p-5 font-light'>

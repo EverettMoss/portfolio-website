@@ -1,5 +1,7 @@
 import React from "react";
-//import ReactLogo from './logo.svg'
+import ReactLogo from './img/logo.svg'
+import NodeLogo from './img/node.png'
+import ExpressLogo from './img/Expressjs.png'
 
 function Projects() {
     return (
@@ -37,16 +39,6 @@ function Projects() {
                         </div>
                     </a>
 
-                    <a href="/dice-info">
-                        <div className="relative bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
-                            <p className="text-center font-light text-lg text-slate-600">dice</p>
-
-                            <div class="absolute bottom-0 left-0 p-2 font-light text-sm">
-                                <p>html, js</p>
-                            </div>
-                        </div>
-                    </a>
-
                     <a href="/names">
                         <div className="relative bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
                             <p className="text-center font-light text-lg text-slate-600">name</p>
@@ -60,6 +52,16 @@ function Projects() {
                     <a href="/twitch-widget">
                         <div className="relative bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
                             <p className="text-center font-light text-lg text-slate-600">twitch chat</p>
+
+                            <div class="absolute bottom-0 left-0 p-2 font-light text-sm">
+                                <p>html, js</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/dice-info">
+                        <div className="relative bg-slate-50 border-zinc-200 border-2 h-48 rounded shadow-md">
+                            <p className="text-center font-light text-lg text-slate-600">dice</p>
 
                             <div class="absolute bottom-0 left-0 p-2 font-light text-sm">
                                 <p>html, js</p>

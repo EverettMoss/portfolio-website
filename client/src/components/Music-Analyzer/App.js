@@ -4,6 +4,8 @@ import { useState } from "react"
 import moment from "moment"
 import TopSummary from './Components/TopSummary'
 import WeeklyPlayCharts from './Components/WeeklyPlayCharts'
+import ReasonPieChart from './Components/ReasonPieChart'
+import SongsTable from './Components/SongsTable'
 
 function App() {
 
@@ -41,30 +43,10 @@ function App() {
     setYearRange(Array.from(uniqueYears).sort())
   }
 
-
-  const getTrackTotals = (musicdata) => {
-    var tracks = []
-
-    musicdata.forEach(item => {
-      if (tracks[item.track] == null) {
-        tracks[item.track] = {
-          plays: 0,
-          time: 0
-        }
-      } else {
-        tracks[item.track].plays += 1
-        tracks[item.track].time += item.play_duration
-      }
-    })
-
-    setTracks(tracks)
-  }
-
   const [data, setData] = useState([])
   const [isCsvDropped, setCsvDrop] = useState(false)
   const [yearRange, setYearRange] = useState([])
-  const [currentYear, setCurrentyear] = useState('2018')
-  const [tracks, setTracks] = useState({})
+  const [currentYear, setCurrentyear] = useState('2021')
 
   return (
     <>
@@ -121,8 +103,28 @@ function App() {
               </ul>
             </div>
 
+
+
             <TopSummary data={data} year={currentYear} />
-            <WeeklyPlayCharts data={data} year={currentYear} />
+
+            <div className='w-full h-1/6'>
+              <div className='grid grid-cols-4 gap-2 m-5'>
+                <div className='h-80 col-span-2'>
+                  <WeeklyPlayCharts data={data} year={currentYear} />
+                </div>
+                <div className= 'h-80 col-span-2'>
+                  <ReasonPieChart data={data} year={currentYear} />
+                </div>
+
+                <div className='h-80 bg-sky-100 col-span-4 overflow-y-auto rounded-lg'>
+                    <SongsTable data={data} year={currentYear}/>
+                </div>
+
+              </div>
+
+
+
+            </div>
           </div>
         </>
       }
