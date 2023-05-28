@@ -16,7 +16,6 @@ function Rewind() {
                         the data on a webpage. After settling on this solution for a couple years I decided to completely refactor the project in react and
                         adding the feature to drag and drop your own data to the website. If you would like demo this, you can download the sample csv in the 
                         GitHub repository.
-
                     </p>
                 </div>
                 <div className="">

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -12,10 +11,6 @@ import { Bar } from 'react-chartjs-2';
 
 
 function WeeklyPlayCharts(props) {
-    //CONSTANTS
-    const MS_TO_MINUTES = 60000
-    const [weekMinutes, setWeekMinutes] = useState([])
-
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -45,7 +40,7 @@ function WeeklyPlayCharts(props) {
         datasets: [
             {
                 label: 'Minutes',
-                data: [weekMinutes.Sunday, weekMinutes.Monday, weekMinutes.Tuesday, weekMinutes.Wednesday, weekMinutes.Thursday, weekMinutes.Friday, weekMinutes.Saturday],
+                data: [props.data.Sunday, props.data.Monday, props.data.Tuesday, props.data.Wednesday, props.data.Thursday, props.data.Friday, props.data.Saturday],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 159, 64, 0.2)',
@@ -69,44 +64,12 @@ function WeeklyPlayCharts(props) {
         ],
     };
 
-    //weekdays  
-    const getWeekdays = (musicdata) => {
-        let plays = {
-            Monday: 0,
-            Tuesday: 0,
-            Wednesday: 0,
-            Thursday: 0,
-            Friday: 0,
-            Saturday: 0,
-            Sunday: 0
-        }
-        musicdata.forEach(item => {
-            if (item.year == props.year)
-                plays[item.day_of_week] += item.play_duration / MS_TO_MINUTES
-        })
-
-        return (plays)
-    }
-
-    useEffect(() => {
-        const plays = getWeekdays(props.data)
-        setWeekMinutes(plays)
-
-    }, []);
-
-    useEffect(() => {
-        const plays = getWeekdays(props.data)
-        setWeekMinutes(plays)
-
-    }, [props.year]);
-
     return (
         <>
             <Bar options={options} data={data} />
         </>
 
     );
-
 }
 
 export default WeeklyPlayCharts;

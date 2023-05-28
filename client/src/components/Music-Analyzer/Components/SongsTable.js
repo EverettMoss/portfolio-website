@@ -1,59 +1,28 @@
-import { useState, useEffect } from 'react';
-
+import { useEffect, useState } from "react"
 
 function SongsTable(props) {
-    //CONSTANTS
-    const MS_TO_MINUTES = 60000
+    const MS_TO_MIN = 60000
+    const [data, setData] = useState([props.data])
 
-    const [tracks, setTracks] = useState([])
-    const [totals, setTotals] = useState([])
+    const sorting = (col) => {
 
+        const sortedData = {};
 
-    const getTrackTotals = (musicdata) => {
-        var tracks = []
+        Object.keys(data)
+            .sort((a, b) => (data[a][col] > data[b][col]) ? -1 : 1)
+            .forEach(key => {
+                sortedData[key] = data[key];
+            });
 
-        musicdata.forEach(item => {
-            if (props.year === item.year) {
-                if (tracks[item.track] == null) {
-                    tracks[item.track] = {
-                        plays: 1,
-                        time: item.play_duration / MS_TO_MINUTES
-                    }
-                } else {
-                    tracks[item.track].plays += 1
-                    tracks[item.track].time += item.play_duration / MS_TO_MINUTES
-                }
-            }
-        })
-        setTotals(tracks)
-    }
+            //console.log(JSON.stringify(props.data, null /*replacer function */, 4 /* space */))
+            setData(sortedData)
 
-    //list of tracks
-    const getTracklist = (musicdata) => {
-        const tracklist = new Set()
-
-        var res = musicdata.reduce(function (obj, v) {
-            if (props.year === v.year)
-                tracklist.add(v.track)
-            return obj;
-        }, {})
-
-        const tracksArray = Array.from(tracklist);
-        setTracks(tracksArray)
     }
 
     useEffect(() => {
-        getTrackTotals(props.data)
-        getTracklist(props.data)
-
-    }, []);
-
-    useEffect(() => {
-        getTrackTotals(props.data)
-        getTracklist(props.data)
-
-
-    }, [props.year]);
+        console.log('data updated')
+        setData(props.data)
+    }, [props.data]);
 
     return (
         <>
@@ -63,39 +32,35 @@ function SongsTable(props) {
                         <th scope="col" className="w-2/12 py-3 px-6">
                             Track
                         </th>
-                        <th scope="col" className="w-2/12 py-3 px-6">
+                        <th scope="col" className="w-2/12 py-3 px-6 cursor-pointer" onClick={() => sorting('count')}>
                             Plays
                         </th>
-                        <th scope="col" className="w-2/12 py-3 px-6">
+                        <th scope="col" className="w-2/12 py-3 px-6 cursor-pointer" onClick={() => sorting('time')}>
                             Duration (min)
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-
-                        tracks.map((track) => {
+                        Object.entries(data).map(([key, val]) => {
                             return (
                                 <>
-                                    <tr className="bg-cyan-100 border-b border-cyan-400 text-cyan-500">
+                                    <tr className="bg-cyan-100 border-b border-cyan-400 text-cyan-500" key={key}>
                                         <td className="py-4 px-6">
-                                            {track}
+                                            {key}
                                         </td>
 
                                         <td className="py-4 px-6">
-                                            {totals[track].plays}
+                                            {val.count}
                                         </td>
 
                                         <td className="py-4 px-6">
-                                            {  Math.round(totals[track].time * 100) / 100 }
+                                            {Math.round((val.time / MS_TO_MIN) * 100) / 100}
                                         </td>
-
                                     </tr>
                                 </>
-                            );
+                            )
                         })
-
-
                     }
                 </tbody>
             </table>
