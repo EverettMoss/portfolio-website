@@ -51,7 +51,8 @@ function App() {
         const song_obj = {
           artist: item['Artist Name'],
           song: item['Song Name'],
-          track: track_title
+          track: track_title,
+          week: moment(item['Event Start Timestamp']).format('w')
         }
 
         //add song to dictionary / update info
@@ -116,7 +117,6 @@ function App() {
                 header: true,
                 complete: function (results) {
                   cleanData(results.data)
-                  console.log('done.')
                   setCsvDrop(!isCsvDropped)
                 }
               })
@@ -156,7 +156,7 @@ function App() {
             </div>
 
             <TopSummary data={data[currentYear]['totals']} />
-
+            {console.log(data)}
             <div className='w-full h-1/6'>
               <div className='grid grid-cols-4 gap-2 m-5'>
                 <div className='h-80 col-span-2'>

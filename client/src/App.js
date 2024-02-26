@@ -5,8 +5,8 @@ import About from './components/about'
 import Soundcloud from './components/soundcloud-stats'
 import RewindInfo from './components/RewindInfo'
 import MusicRewind from './components/music'
-import AlbumCredits from './components/album-credits'
-import Dice from './components/dice'
+import SongCredits from './components/song-credits'
+import PortfolioInfo from './components/portfolio-info'
 import Names from './components/name-api'
 import TwitchWidget from './components/twitch-widget'
 import { Routes, Route } from 'react-router-dom'
@@ -22,8 +22,8 @@ function App() {
         <Route path='/soundcloud' element={<Soundcloud />} />
         <Route path='/rewind-info' element={<RewindInfo />} />
         <Route path='/music-rewind' element={<MusicRewind />} />
-        <Route path='/album-cedits' element={<AlbumCredits />} />
-        <Route path='/dice-info' element={<Dice />} />
+        <Route path='/song-credits' element={<SongCredits />} />
+        <Route path='/portfolio-info' element={<PortfolioInfo />} />
         <Route path='/names' element={<Names />} />
         <Route path='/twitch-widget' element={<TwitchWidget />} />
       </Routes>
